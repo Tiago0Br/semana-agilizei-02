@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-13T18:31:54.310Z",
-    "end": "2020-12-13T18:32:13.498Z",
-    "duration": 19188,
+    "start": "2020-12-13T18:36:08.785Z",
+    "end": "2020-12-13T18:36:22.792Z",
+    "duration": 14007,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a373e552-cd0f-4d8d-b8be-19a3604bf9f7",
+      "uuid": "9efd1b6e-f6e9-4ead-8369-8ad9ec47b04a",
       "title": "",
       "fullFile": "cypress/integration/compra.spec.js",
       "file": "cypress/integration/compra.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "75a1b80e-035a-41ef-9d08-18d934a60547",
+          "uuid": "ca077a75-55e7-40b3-81c9-06e5783d2dca",
           "title": "Compra",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Efetuar a compra de um produto",
               "fullTitle": "Compra Efetuar a compra de um produto",
               "timedOut": null,
-              "duration": 19112,
+              "duration": 13936,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.backgroundLogin();\ncy.visit(\"/\");\nvar nomeProduto = \"Printed Chiffon Dress\";\ncy.contains(nomeProduto).trigger(\"mouseover\");\ncy.contains(nomeProduto).parent().siblings(\"div.button-container\").children(\"a\").first().click(); // Validando se o elemento foi adicionado ao carrinho\ncy.get(\".icon-ok\").parent().should(\"contain.text\", \"Product successfully added to your shopping cart\");\ncy.get(\"span#layer_cart_product_title\").should(\"contain.text\", nomeProduto);\ncy.pause();\ncy.get(\".button-container a[href$='controller=order']\").click();\ncy.get(\".cart_navigation a[href$='order&step=1']\").click(); // cy.get('#email').type(\"tiagoteste@hotmail.com\");\n// cy.get('#passwd').type(\"senha1234*\");\n// cy.get('button#SubmitLogin').click();\n// Validando se o endereço da entrega é igual ao da cobrança\ncy.get(\"[type='checkbox']#addressesAreEquals\").should('have.attr', 'checked', 'checked');\ncy.get(\"button[name='processAddress']\").click();\ncy.get('#cgv').check();\ncy.get(\"button[name='processCarrier']\").click();\ncy.get('a.cheque').click();\ncy.get('#cart_navigation button[type=\"submit\"]').find(\"span\").contains(\"I confirm my order\").click();\ncy.get(\"p.alert-success\").should(\"contain.text\", \"Your order on My Store is complete.\"); // Invoke chama uma função javascript\ncy.get(\"div.box\").invoke('text').then(function (text) {\n  console.log(text.match(/[A-Z][A-Z]+/g));\n  cy.writeFile('cypress/fixtures/pedido.json', {\n    id: \"\".concat(text.match(/[A-Z][A-Z]+/g))\n  });\n});\ncy.get(\".cart_navigation a[href$='history']\").click(); // Leitura do arquivo\ncy.readFile(\"cypress/fixtures/pedido.json\").then(function (pedido) {\n  cy.get(\"tr.first_item .history_link a\").should(\"contain.text\", pedido.id);\n});",
               "err": {},
-              "uuid": "2af39cd7-8690-4b23-af68-1fd932ed1f89",
-              "parentUUID": "75a1b80e-035a-41ef-9d08-18d934a60547",
+              "uuid": "063fffbb-a6d0-48c9-9b16-298423045138",
+              "parentUUID": "ca077a75-55e7-40b3-81c9-06e5783d2dca",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2af39cd7-8690-4b23-af68-1fd932ed1f89"
+            "063fffbb-a6d0-48c9-9b16-298423045138"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19112,
+          "duration": 13936,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
